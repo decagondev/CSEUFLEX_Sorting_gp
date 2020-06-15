@@ -12,7 +12,7 @@ import random
 import time  # We'll use this later
 
 my_range = 100
-my_size = 10
+my_size = 100
 
 my_random = random.sample(range(my_range), my_size)
 print(my_random)
@@ -26,7 +26,7 @@ def linear_search(arr, target):
 
     return False
 
-print(linear_search(my_random, searching_for))
+# print(linear_search(my_random, searching_for))
 
 
 # Binary Search
@@ -63,7 +63,7 @@ def find_value_binary(arr, value):
 
 # Sort the array of numbers
 my_random.sort()
-print(find_value_binary(my_random, searching_for))
+# print(find_value_binary(my_random, searching_for))
 
 
 # Comparing Linear vs. Binary
@@ -75,29 +75,7 @@ Key Points
 - Subsequent searches will be much faster
 """
 
-print("Linear")
-start = time.time()
-print(linear_search(my_random, searching_for))
-end = time.time()
-print(f"Runtime: {end - start}")
-
-print("Binary")
-start = time.time()
-my_random.sort()
-print(find_value_binary(my_random, searching_for))
-end = time.time()
-print(f"Runtime: {end - start}")
-
-
-# # lets see what heppens with multiple runs
-
 # print("Linear")
-# start = time.time()
-# print(linear_search(my_random, searching_for))
-# end = time.time()
-# print(f"Runtime: {end - start}")
-
-# print("Linear Again")
 # start = time.time()
 # print(linear_search(my_random, searching_for))
 # end = time.time()
@@ -110,8 +88,30 @@ print(f"Runtime: {end - start}")
 # end = time.time()
 # print(f"Runtime: {end - start}")
 
-# print("Binary _after_ sort")
-# start = time.time()
-# print(find_value_binary(my_random, searching_for))
-# end = time.time()
-# print(f"Runtime: {end - start}")
+
+# lets see what heppens with multiple runs
+
+print("Linear")
+start = time.time()
+print(linear_search(my_random, searching_for))
+end = time.time()
+print(f"Runtime: {end - start}")
+
+print("Linear Again")
+start = time.time()
+print(linear_search(my_random, searching_for))
+end = time.time()
+print(f"Runtime: {end - start}")
+
+print("Binary")
+start = time.time()
+my_random.sort()
+print(find_value_binary(my_random, searching_for))
+end = time.time()
+print(f"Runtime: {end - start}")
+
+print("Binary _after_ sort")
+start = time.time()
+print(find_value_binary(my_random, searching_for))
+end = time.time()
+print(f"Runtime: {end - start}")
