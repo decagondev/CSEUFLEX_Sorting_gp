@@ -2,9 +2,9 @@ animals = ['Duck', 'Jackal', 'Hippo', 'Aardvark', 'Cat', 'Flamingo', 'Iguana', '
 
 
 # Linear time
-def print_animals(animal_list):
-    for i in range(len(animal_list)):
-        print(animal_list[i])
+def print_animals(animal_list): # O(n)
+    for i in range(len(animal_list)): # O(n)
+        print(animal_list[i]) # O(1)
 
 
 """
@@ -19,13 +19,18 @@ Getting the time complexity of an iterative solution
 """
 
 # lets figure out the time complexity of this code
-def print_animals_a(animal_list):
-    for i in range(len(animals)):
-        print(animal_list[i])
-        my_number = 0
-        for _ in range(100000):
-            my_number += 1
+def print_animals_a(animal_list): # O(n) Linear
+    for i in range(len(animals)): # O(n)
+        print(animal_list[i]) # O(1) * n (1 * n)
+        my_number = 0  # O(1) (1 * n)
+        # O(2 * n)
+        for _ in range(100000): # O(100000) (100000 * n)
+            my_number += 1  # O(1) (1 * 100000) O(100000)
+            
+    # O(100003 * n) => O(n)
+    # O(100000 * 1) => O(1)
 
+    # O(n)
 
 # Polynomial Time
 """
@@ -37,10 +42,10 @@ Key Points
 """
 
 # Print a list of all possible animal pairs
-def print_animal_pairs():
-    for animal_1 in animals:
-        for animal_2 in animals:
-            print(f"{animal_1} - {animal_2}")
+def print_animal_pairs(): # O(n ^ 2)
+    for animal_1 in animals: # O(n)
+        for animal_2 in animals: # O(n)
+            print(f"{animal_1} - {animal_2}") # O(1)
             
 # Print a list of all possible animal triples
 def print_animal_triples():
