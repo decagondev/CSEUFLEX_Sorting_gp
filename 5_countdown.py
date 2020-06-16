@@ -3,13 +3,20 @@ One of the most straightforward problems we can solve recursively is to print ev
 We can do that simply by writing a function that prints n, then calls itself for n-1:
 """
 
-def countdown(n):
-    print(n)
-    countdown(n - 1)
+def countdown(n):  # label
+    if n == 0: # condition
+        return
+    print(n) # body
+    countdown(n - 1)  # decrement
+
+# n = 10
+# def countdown_i(n):
+#     while (n > 0): # condition and label
+#         print(n) # body
+#         n -= 1 # decrement
 
 
-
-
+countdown(10)
 
 
 
@@ -59,4 +66,4 @@ def countdown(n):
 
 
    
-countdown(100)
+# countdown(100)
