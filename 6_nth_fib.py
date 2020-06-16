@@ -24,7 +24,9 @@ with an arbitrary or defined answer, this is the base case.
 
 We can use this understanding to plan our approach via pseudocode:
 """
-
+#  0  1   2  3  4  5  6
+# [0, 1], 1, 2, 3, 5, 8
+# f(n) = (f(n - 1) + f(n - 2))
 
 
 # print the nth fib number
@@ -44,20 +46,28 @@ We'll break out the recursive calls and save them into variables so we can more 
 """
 
 # # print the nth fib number
-# def recursive_fib(n):
-#     # base case
-#     # test for negatives (TODO)
-#     # if n is 0
-#     if n == 0:
-#         return 0
-#     # return 0
-#     # if n is 1
-#     if n == 1:
-#         return 1
-#     return 1
+def recursive_fib(n):
+    # base case
+    # test for negatives (TODO)
+    # if n is 0
+    if n == 0:
+        return 0
+    # return 0
+    # if n is 1
+    if n == 1:
+        return 1
+    # return 1
 
-#     # if we're not on the base case
-#     # return recursion of n-1 + n-2
-#     n_minus_1 = recursive_fib(n-1)
-#     n_minus_2 = recursive_fib(n-2)
-#     return n_minus_1 + n_minus_2
+    # if we're not on the base case
+    # return recursion of n-1 + n-2
+    n_minus_1 = recursive_fib(n-1)
+    n_minus_2 = recursive_fib(n-2)
+    return n_minus_1 + n_minus_2
+
+
+print(recursive_fib(38)) # => 8
+
+
+fib = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+
+fib[9]
